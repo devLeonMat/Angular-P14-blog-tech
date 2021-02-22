@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-10">
+      <div class="card-columns">
+        <div class="card" *ngFor="let video of videos">
+          <img class="card-img-top" [src]="video.thumbnails.high.url" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{video.title}}</h5>
+            <p class="card-text">
+              <strong>Autor: </strong>{{ video.channelTitle}}
+
+            </p>
+            <p class="card-text">
+              <strong>Publicado: </strong>{{ video.publishedAt | date}}
+            </p>
+            <button class="btn btn-outline-primary btn-block"
+                    (click)="mostrarVideo( video )">Ver video
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <ul class="list-group list-group-flush" *ngFor="let new of newsModel.articles">
+        <li class="list-group-item">
+          <div>
+            <img src="{{new.urlToImage}}" alt="" width="200">
+          </div>
+          <div>
+            <p style="width: 200px">
+              {{ new.title}}
+            </p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="row mt-5 mb-5 text-center">
+  <div class="col">
+    <button class="btn btn-primary btn-lg"
+            (click)="cargarVideos()">
+      Siguiente Pagina
+
+    </button>
+  </div>
+</div>
+

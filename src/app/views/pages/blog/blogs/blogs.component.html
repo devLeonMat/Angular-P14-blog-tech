@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<br>
+<br>
+<div class="container">
+  <div class="card-deck" *ngFor="let blog of blogModels.articles">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title" style="font-size: 20px "  >{{blog.title}}</h5>
+        <p class="card-text">{{ blog.author}}</p>
+        <p class="card-text">{{ blog.publishedAt}}</p>
+
+
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-body">
+        <p class="card-text">{{blog.content}}</p>
+
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" [src]="blog.urlToImage"  alt="Card image cap">
+      <div class="card-body">
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
